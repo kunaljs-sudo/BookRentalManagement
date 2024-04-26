@@ -1,0 +1,827 @@
+{
+	"info": {
+		"_postman_id": "f7e01b79-4ef7-4f7d-adb0-a8c00ffd83cf",
+		"name": "BookManagementSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29849722"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Kunal\",\n    \"lastName\": \"Js\",\n    \"email\": \"kunal@gmail.com\",\n    \"password\" : \"kunal\",\n    \"role\": \"ADMIN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/auth/register"
+			},
+			"response": [
+				{
+					"name": "RegisterUser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Kunal\",\n    \"lastName\": \"Js\",\n    \"email\": \"kunal@gmail.com\",\n    \"password\" : \"kunal\",\n    \"role\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/auth/register"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 11:09:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwtToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQxMjk3ODIsImV4cCI6MTcxNDIxNjE4Mn0.1scg1nThEhDFU1va20lZtNTY28eVfAKI_By-G0VXI38\"\n}"
+				}
+			]
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"kj@gmail.com\",\n    \"password\":\"kunal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllBooks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrakBnbWFpbC5jb20iLCJpYXQiOjE3MTQxMTg5MzAsImV4cCI6MTcxNDIwNTMzMH0.c_1dtd0U2WDSyQJh4YqN09knhmIzeKkbpcKlaUgwxe4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/books/allBook"
+			},
+			"response": [
+				{
+					"name": "GetAllBooks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/books/allBook"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 08:10:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"bookId\": 1,\n        \"title\": \"Game of Thrones\",\n        \"author\": \"George R.Rfgh. Martin\",\n        \"genre\": \"Fiction\",\n        \"availabilityStatus\": false,\n        \"userEmail\": \"kunal@gmail.com\"\n    },\n    {\n        \"bookId\": 3,\n        \"title\": \"Of\",\n        \"author\": \"George R.Rfgh. Martin\",\n        \"genre\": \"Fiction\",\n        \"availabilityStatus\": true,\n        \"userEmail\": \"\"\n    },\n    {\n        \"bookId\": 4,\n        \"title\": \"Thrones\",\n        \"author\": \"George R.Rfgh. Martin\",\n        \"genre\": \"Fiction\",\n        \"availabilityStatus\": true,\n        \"userEmail\": \"\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "CreateBookByAdminOnly",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Response status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the correct Content-Type header\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/xml\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response body is not empty\", function () {",
+							"    const responseData = xml2Json(pm.response.text());",
+							"    ",
+							"    pm.expect(responseData).to.not.be.null.and.to.not.be.empty;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response body follows the expected XML schema\", function () {",
+							"    const responseData = xml2Json(pm.response.text());",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQwODMwMzQsImV4cCI6MTcxNDE2OTQzNH0.ys-XOZZxRJZgovqZdy3FwaCBRQs6zCgb7O6zJB_dts8"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Bharat the India\",\n    \"author\": \"George R.Rfgh. Martin\",\n    \"genre\": \"Fiction\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/books/createBook"
+			},
+			"response": [
+				{
+					"name": "CreateBookByAdminOnly",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Bharat the India\",\n    \"author\": \"George R.Rfgh. Martin\",\n    \"genre\": \"Fiction\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/books/createBook"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 08:12:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"bookId\": 5,\n    \"title\": \"Bharat the India\",\n    \"author\": \"George R.Rfgh. Martin\",\n    \"genre\": \"Fiction\",\n    \"availabilityStatus\": true,\n    \"userEmail\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GetAllUsersAdminOnly",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQwODMwMzQsImV4cCI6MTcxNDE2OTQzNH0.ys-XOZZxRJZgovqZdy3FwaCBRQs6zCgb7O6zJB_dts8"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/users/allUsers"
+			},
+			"response": [
+				{
+					"name": "GetAllUsersAdminOnly",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/users/allUsers"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 08:21:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"userId\": 1,\n        \"email\": \"kj1@gmail.com\",\n        \"firstName\": \"Kunal\",\n        \"lastName\": \"Js\",\n        \"password\": \"$2a$10$EMjXTOb0BHYBjv.M3pvqS.RMLMJg2Q9IrLiRvGYMpQgNVAQXFRmcG\",\n        \"role\": \"ADMIN\",\n        \"book\": []\n    },\n    {\n        \"userId\": 2,\n        \"email\": \"kunal@gmail.com\",\n        \"firstName\": \"Kunal\",\n        \"lastName\": \"Js\",\n        \"password\": \"$2a$10$fsu2xNqyEfkff2QfHTLaOex8w.KinJ9NGxaoznwvSkcBM.E1zdABm\",\n        \"role\": \"ADMIN\",\n        \"book\": [\n            \"Of\",\n            \"Bharat the India\"\n        ]\n    },\n    {\n        \"userId\": 3,\n        \"email\": \"kj@gmail.com\",\n        \"firstName\": \"Kunal\",\n        \"lastName\": \"Js\",\n        \"password\": \"$2a$10$PH5H2yzGSe4ON1.4P83sVu08I7.lnLnuxlL5W0hHj0nM0Po4p8Piu\",\n        \"role\": \"USER\",\n        \"book\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "RentBook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQwODMwMzQsImV4cCI6MTcxNDE2OTQzNH0.ys-XOZZxRJZgovqZdy3FwaCBRQs6zCgb7O6zJB_dts8"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8081/books/3/rent"
+			},
+			"response": [
+				{
+					"name": "RentBook",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8081/books/3/rent"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 08:24:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"bookId\": 3,\n    \"title\": \"New GOT\",\n    \"author\": \"George R.Rfgh. Martin\",\n    \"genre\": \"Fiction\",\n    \"availabilityStatus\": false,\n    \"userEmail\": \"kunal@gmail.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateBook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQwODMwMzQsImV4cCI6MTcxNDE2OTQzNH0.ys-XOZZxRJZgovqZdy3FwaCBRQs6zCgb7O6zJB_dts8"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"New GOT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/books/3/update"
+			},
+			"response": [
+				{
+					"name": "UpdateBook",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"New GOT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/books/3/update"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 08:24:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"bookId\": 3,\n    \"title\": \"New GOT\",\n    \"author\": \"George R.Rfgh. Martin\",\n    \"genre\": \"Fiction\",\n    \"availabilityStatus\": true,\n    \"userEmail\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReturnBook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQwODMwMzQsImV4cCI6MTcxNDE2OTQzNH0.ys-XOZZxRJZgovqZdy3FwaCBRQs6zCgb7O6zJB_dts8"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8081/books/3/return"
+			},
+			"response": [
+				{
+					"name": "ReturnBook",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8081/books/3/return"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 08:25:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"bookId\": 3,\n    \"title\": \"New GOT\",\n    \"author\": \"George R.Rfgh. Martin\",\n    \"genre\": \"Fiction\",\n    \"availabilityStatus\": true,\n    \"userEmail\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteBookOnlyByAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQwODMwMzQsImV4cCI6MTcxNDE2OTQzNH0.ys-XOZZxRJZgovqZdy3FwaCBRQs6zCgb7O6zJB_dts8"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8081/books/deleteBook/5"
+			},
+			"response": [
+				{
+					"name": "DeleteBookOnlyByAdmin",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8081/books/deleteBook/5"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 08:28:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": 400,\n    \"errorMessage\": \"Unable to delete book as it is being hold by an User: kunal@gmail.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "changePassword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQwODMwMzQsImV4cCI6MTcxNDE2OTQzNH0.ys-XOZZxRJZgovqZdy3FwaCBRQs6zCgb7O6zJB_dts8"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"kunal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/users/user/changePassword"
+			},
+			"response": [
+				{
+					"name": "changePassword",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"kunal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/users/user/changePassword"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Apr 2024 08:32:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": 2,\n    \"email\": \"kunal@gmail.com\",\n    \"firstName\": \"Kunal\",\n    \"lastName\": \"Js\",\n    \"password\": \"$2a$10$UvgdEQz87wEvqnUwA9FxnOVE0ZnrUL6i6WAB5lfWy.xCVXxHt3rDG\",\n    \"role\": \"ADMIN\",\n    \"book\": [\n        \"Bharat the India\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQwODMwMzQsImV4cCI6MTcxNDE2OTQzNH0.ys-XOZZxRJZgovqZdy3FwaCBRQs6zCgb7O6zJB_dts8"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8081/users/user/deleteUser"
+			},
+			"response": []
+		}
+	]
+}
