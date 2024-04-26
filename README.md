@@ -28,6 +28,10 @@ FileName should be exact same as I have provided this filename to LmsApplication
 - mysql.database=dbname
 - mysql.username=username
 - mysql.password=password
+- 
+### application.properties
+inside application.properties add your own secret key
+- application.security.jwt.secret-key=YourSecretKey
 
 ## PostMan Collection
 
