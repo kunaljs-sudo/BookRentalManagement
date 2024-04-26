@@ -31,4 +31,4 @@ FileName should be exact same as I have provided this filename to LmsApplication
 
 ## PostMan Collection
 
-- [PostManCollection.json]()
+- [PostManCollection.json](https://github.com/kunaljs-sudo/BookRentalManagement/blob/main/BookManagementSystem.postman_collection.json)
