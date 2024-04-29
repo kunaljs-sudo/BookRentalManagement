@@ -3,7 +3,7 @@ This file can be used as a template for initializing and running spring projects
 What's included:
 
 1. Gradle file created from start.spring.io
-2. Other dependencies like Mongo.
+2. Other dependencies like MySQL.
 3. Spring Tests
 4. CRUD operation on data
 
@@ -15,6 +15,9 @@ From the repository root,
 
 1. run `./gradlew build test`run the build
 2. run `./gradlew bootjar` to create executable jar. The jar will be located inside build directories.
+
+## Authentication with Spring Security
+This project utilizes Spring Security to handle authentication and authorization.
 
 ## Need to be added:
 
