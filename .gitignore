@@ -38,3 +38,4 @@ out/
 
 
 mysql-config.properties
+todo.log.dir_IS_UNDEFINED
