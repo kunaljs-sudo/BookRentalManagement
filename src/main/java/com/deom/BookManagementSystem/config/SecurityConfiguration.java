@@ -18,35 +18,39 @@ import com.deom.BookManagementSystem.entity.Role;
 @EnableMethodSecurity
 public class SecurityConfiguration {
 
-    private final AuthenticationProvider authenticationProvider;
-    private final JwtAuthenticationFilter jwtAuthFilter;
+        private final AuthenticationProvider authenticationProvider;
+        private final JwtAuthenticationFilter jwtAuthFilter;
 
-    public SecurityConfiguration(AuthenticationProvider authenticationProvider,
-            JwtAuthenticationFilter jwtAuthFilter) {
-        this.authenticationProvider = authenticationProvider;
-        this.jwtAuthFilter = jwtAuthFilter;
-    }
+        public SecurityConfiguration(AuthenticationProvider authenticationProvider,
+                        JwtAuthenticationFilter jwtAuthFilter) {
+                this.authenticationProvider = authenticationProvider;
+                this.jwtAuthFilter = jwtAuthFilter;
+        }
 
-    private static final String[] WHITE_LIST_URL = { "/auth/**",
-            "/swagger-ui/**",
-            "/swagger-ui.html",
-            "/swagger-ui/index.html" };
+        private static final String[] WHITE_LIST_URL = { "/auth/**",
+                        "/swagger-ui/**",
+                        "/swagger-ui.html",
+                        "/swagger-ui/index.html",
+                        "/swagger-ui/index.html/**" };
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(req -> req.requestMatchers(WHITE_LIST_URL)
-                        .permitAll()
-                        .requestMatchers("/user/**").hasAnyAuthority(Role.ADMIN.name(), Role.USER.name())
-                        .requestMatchers("/books/**").hasAnyAuthority(Role.ADMIN.name(), Role.USER.name())
-                        .anyRequest()
-                        .authenticated())
-                // do not store state validate with token
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                // invoke JWTAUth before authentication
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-        return httpSecurity.build();
-    }
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+                httpSecurity
+                                .csrf(AbstractHttpConfigurer::disable)
+                                .authorizeHttpRequests(req -> req.requestMatchers(WHITE_LIST_URL)
+                                                .permitAll()
+                                                .requestMatchers("/user/**")
+                                                .hasAnyAuthority(Role.ADMIN.name(), Role.USER.name())
+                                                .requestMatchers("/books/**")
+                                                .hasAnyAuthority(Role.ADMIN.name(), Role.USER.name())
+                                                .anyRequest()
+                                                .authenticated())
+                                // do not store state validate with token
+                                .sessionManagement(session -> session
+                                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                                // invoke JWTAUth before authentication
+                                .authenticationProvider(authenticationProvider)
+                                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+                return httpSecurity.build();
+        }
 }
