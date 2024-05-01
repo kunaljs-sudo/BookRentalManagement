@@ -41,3 +41,4 @@ mysql-config.properties
 todo.log.dir_IS_UNDEFINED
 config.txt
 tokenFile.txt
+mysql-config.env
