@@ -2,11 +2,12 @@ package com.deom.BookManagementSystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
 
 import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
-// @PropertySource("classpath:mysql-config.properties")
+@PropertySource("classpath:mysql-config.properties")
 @Slf4j
 public class BookManagementSystemApplication {
 
