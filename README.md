@@ -1,3 +1,9 @@
+## Here the Drive Link for Jar File
+
+### [Jar](https://drive.google.com/drive/folders/1533BNgAUHKpfal2l-Np3aKTwnE1y20HI?usp=sharing)
+
+---
+
 This file can be used as a template for initializing and running spring projects.
 
 What's included:
@@ -13,15 +19,20 @@ Usage -
 
 From the repository root,
 
-1. run `./gradlew build test`run the build
-2. run `./gradlew bootjar` to create executable jar. The jar will be located inside build directories.
+1. run `./gradlew clean build -x test`run the build to create executable jar. The jar will be located inside build directories
 
 ## Authentication with Spring Security
+
 This project utilizes Spring Security to handle authentication and authorization.
+
+### API for Auth:
+
+- /auth/login
+- /auth/register
 
 ## Need to be added:
 
-Since this application uses cloud MySQL server from "https://aiven.io" as database and I have removed mysql-config.properties file which contain hostname, portname, username, password, etc. of database, if you want to use mysql cloud you can use Aven.io add the file in main/resources
+Since this application uses cloud MySQL server from [Aiven](https://aiven.io) as database and I have removed mysql-config.properties file which contain hostname, portname, username, password, etc. of database, if you want to use mysql cloud you can use Aven.io add the file in main/resources
 FileName should be exact same as I have provided this filename to LmsApplication.java as property file, if you wish to change it change in LmsApplication.java too
 
 #### mysql-config.properties
@@ -31,9 +42,12 @@ FileName should be exact same as I have provided this filename to LmsApplication
 - mysql.database=dbname
 - mysql.username=username
 - mysql.password=password
-- 
+-
+
 ### application.properties
+
 inside application.properties add your own secret key
+
 - application.security.jwt.secret-key=YourSecretKey
 
 ## PostMan Collection
