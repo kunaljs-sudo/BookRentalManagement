@@ -31,10 +31,14 @@ This project utilizes Spring Security to handle authentication and authorization
 
 ### API for Auth:
 
+(http://localhost:8081)
+
 - /auth/login
 - /auth/register
 
 #### Public APIS
+
+(http://localhost:8081)
 
 - /auth/login
 - /auth/register
