@@ -1,6 +1,6 @@
 ## Here the Drive Link for Jar File
 
-### [Jar](https://drive.google.com/drive/folders/1533BNgAUHKpfal2l-Np3aKTwnE1y20HI?usp=sharing)
+### [BookManagementSystemApplication Jar Files](https://drive.google.com/drive/folders/1533BNgAUHKpfal2l-Np3aKTwnE1y20HI?usp=sharing)
 
 ---
 
@@ -33,7 +33,7 @@ This project utilizes Spring Security to handle authentication and authorization
 ## Need to be added:
 
 Since this application uses cloud MySQL server from [Aiven](https://aiven.io) as database and I have removed mysql-config.properties file which contain hostname, portname, username, password, etc. of database, if you want to use mysql cloud you can use Aven.io add the file in main/resources
-FileName should be exact same as I have provided this filename to LmsApplication.java as property file, if you wish to change it change in LmsApplication.java too
+FileName should be exact same as I have provided this filename to LmsApplication.java as property file, if you wish to change it change in BookManagementSystemApplication.java too
 
 #### mysql-config.properties
 
