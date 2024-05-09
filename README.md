@@ -30,6 +30,12 @@ This project utilizes Spring Security to handle authentication and authorization
 - /auth/login
 - /auth/register
 
+#### Public APIS
+
+- /auth/login
+- /auth/register
+- /swagger-ui.html : for API documentation
+
 ## Need to be added:
 
 Since this application uses cloud MySQL server from [Aiven](https://aiven.io) as database and I have removed mysql-config.properties file which contain hostname, portname, username, password, etc. of database, if you want to use mysql cloud you can use Aven.io add the file in main/resources
